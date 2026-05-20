@@ -1,0 +1,41 @@
+# 不上传打包文件
+*.apk
+*.ipa
+*.exe
+*.msi
+
+# 不上传压缩包
+*.zip
+*.rar
+*.7z
+*.tar
+*.gz
+
+# 不上传视频
+*.mp4
+*.mov
+*.avi
+*.mkv
+*.wmv
+
+# 不上传大 GIF
+*.gif
+
+# 不上传依赖和构建产物
+node_modules/
+dist/
+build/
+out/
+target/
+.cache/
+.vscode/
+
+# 不上传临时文件
+*.log
+*.tmp
+.DS_Store
+Thumbs.db
+
+# 不上传敏感配置
+.env
+.env.*

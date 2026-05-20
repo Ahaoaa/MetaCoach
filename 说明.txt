@@ -1,0 +1,31 @@
+一、作品策划文档：
+      放在“策划文档”文件夹下，一个.pptx文件，使用PowerPoint打开为完整无误的版本，WPS可能会出现部分乱码，
+可以使用另一个pdf版本，不会出现乱码的情况。
+
+二、可运行版本：
+      放在“可运行demo”文件夹下，双击“MetaCoach Setup 1.0.0.exe”安装，然后就可以打开使用了。
+  注意事项：
+      ①安装：需要337.4MB空间，请确保磁盘空间足够。
+      ②首次打开可能会出现10秒左右空白页面，如果等待10秒依旧是空白页面，请关闭后重新打开，就可以正常使用了。
+      ③卸载：安装路径下会出现“Uninstall MetaCoach.exe”文件，双击运行即可卸载。
+
+三、开发源代码：
+      代码使用VisualStudio Code进行开发，如果想在源代码中运行项目，流程如下（推荐使用可运行版本，二者功能一致！）：
+            1.环境确认：需要安装Node、VisualStudio Code的Live Preview插件
+            2.在VisualStudio Code中打开终端，输入：“cd .\backend\”，进入matacoach\backend，
+            3.输入“node server.js”，出现Server running on port 3000表示后端启用成功
+            4.右键点击index.html，选择Open with live server即可打开网页版demo
+
+四、效果演示图
+      放在“demo效果演示图”文件夹下，一共6张图片，”domo效果展示图1-6“
+
+五、宣传海报：
+      见文件夹中的“MetaCoach宣传海报.jpg”
+
+六、演示视频：
+      见文件夹中的“MetaCoach演示视频.mp4”
+
+            
+
+感谢观看本说明！
+——MetaCoach开发者

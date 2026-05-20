@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils/control_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/pose/pose.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MetaCoach</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preload" href="js/app.js" as="script">
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/loaders/GLTFLoader.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1 class="main-title">MetaCoach 您的智能动作教练</h1>
+
+        <!-- 两个9:16显示区域 -->
+        <div class="display-container">
+            <div class="meta-display" id="metaModelContainer"></div>
+            <div class="video-box">
+                <video id="video" autoplay playsinline></video>
+                <canvas id="skeletonCanvas"></canvas>
+            </div>
+        </div>
+
+        <!-- 控制按钮 -->
+        <div class="controls">
+            <!-- 动作列表下拉菜单 -->
+            <div class="dropdown">
+                <button class="primary-btn" id="animationDropdownBtn">动作列表</button>
+                <div class="dropdown-menu" id="animationCheckboxList">
+                    <p>加载中...</p>
+                </div>
+            </div>
+            <button class="primary-btn" id="cameraBtn">启动摄像头</button>
+            <button class="primary-btn" id="analyzeBtn" disabled>开始实时分析</button>
+            <button class="primary-btn" id="toggleSkeletonBtn">隐藏骨骼追踪</button>
+        </div>
+
+        <!-- 对话框 -->
+        <div class="chat-box">
+            <h3>对美塔说</h3>
+            <div id="chatOutput" class="chat-output"></div>
+            <div class="input-container">
+                <input type="text" id="chatInput" placeholder="在这里输入..." />
+                <button id="sendChatBtn">➤</button>
+            </div>
+        </div>
+
+    </div>
+    <script src="js/threejs-setup.js" defer></script>
+    <script src="js/app.js" defer></script>
+</body>
+</html>

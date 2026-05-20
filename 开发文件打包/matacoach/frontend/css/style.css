@@ -1,0 +1,235 @@
+:root {
+    --primary-color: #1890ff;
+    --error-color: #ff4d4f;
+    --success-color: #52c41a;
+    --text-dark: #333;
+    --bg-light: #f8f9fa;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background: var(--bg-light);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.main-title {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 40px;
+}
+
+/* 显示区域容器 */
+.display-container {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.meta-display, .video-box {
+    width: 45%; /* 调整宽度以适应容器 */
+    aspect-ratio: 9 / 16; /* 设置9:16比例 */
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    background: #000;
+}
+
+.meta-display img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.video-box video, .video-box canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scaleX(-1); /* 镜像翻转 */
+}
+
+.controls {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.primary-btn {
+    padding: 12px 24px;
+    margin: 0 8px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s;
+    background: var(--primary-color);
+    color: white;
+}
+
+/* 对话框样式 */
+.chat-box {
+    width: 100%;
+    max-width: 1200px; /* 增加最大宽度，从1000px改为1200px */
+    margin: 20px auto;
+    padding: 15px; /* 稍微增加内边距 */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.chat-output {
+    min-height: 150px; /* 增加最小高度 */
+    padding: 15px; /* 增加内边距 */
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 15px;
+    overflow-y: auto;
+    max-height: 800px; /* 增加最大高度 */
+    background: #fff;
+}
+
+.chat-output .ai-message, .chat-output .user-message {
+    display: flex;
+    align-items: flex-start; /* 改为顶部对齐 */
+    margin-bottom: 15px; /* 增加间距 */
+}
+
+.chat-output .ai-message .avatar, .chat-output .user-message .avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    flex-shrink: 0; /* 防止头像被压缩 */
+}
+
+.chat-output .user-message {
+    flex-direction: row-reverse;
+    justify-content: flex-start; /* 添加这行确保右对齐时正常显示 */
+}
+
+.chat-output .user-message .avatar {
+    margin-left: 10px;
+    margin-right: 0;
+}
+
+.chat-output p {
+    padding: 12px;
+    border-radius: 8px;
+    max-width: 70%;
+    margin: 0;
+    margin-top: 5px;
+    white-space: pre-wrap; /* 保留换行和空格，并自动换行 */
+}
+
+.chat-output .ai-message p {
+    background-color: #f1f1f1;
+}
+
+.chat-output .user-message p {
+    background-color: #007bff;
+    color: white;
+}
+
+.chat-box {
+    width: 100%;
+    max-width: 1000px; /* 调整这里的最大宽度，比之前稍宽 */
+    margin: 0 auto;
+}
+
+.input-container {
+    position: relative;
+    width: 100%;
+}
+
+#chatInput {
+    width: 100%;
+    padding: 12px 45px 12px 12px; /* 增加内边距并调整右侧空间 */
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+#sendChatBtn {
+    position: absolute;
+    right: 8px; /* 稍微调整位置 */
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 0;
+    width: 32px; /* 稍微增大按钮 */
+    height: 32px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+}
+
+#sendChatBtn:hover {
+    background-color: #0056b3;
+}
+
+
+/* 控制按钮区域 */
+.controls {
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* 下拉菜单容器 */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* 下拉菜单按钮 */
+.dropdown .primary-btn {
+    margin: 0 10px; /* 与其他按钮保持间距 */
+}
+
+/* 下拉菜单内容 */
+.dropdown-menu {
+    display: none; /* 默认隐藏 */
+    position: absolute;
+    top: 100%; /* 位于按钮下方 */
+    left: 0;
+    background-color: #fff; /* 白色背景 */
+    border: 1px solid #ccc; /* 边框 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 阴影效果 */
+    max-width: 400px; /* 限制宽度 */
+    min-width: 150px; /* 最小宽度 */
+    z-index: 1000; /* 确保在其他元素之上 */
+    text-align: left;
+    padding: 10px; /* 内边距 */
+}
+
+/* 下拉菜单显示时的样式 */
+.dropdown-menu.show {
+    display: block; /* 点击按钮时显示 */
+}
+
+/* 复选框和标签的容器（动态生成时不再使用 div） */
+.dropdown-menu label {
+    display: inline-flex; /* 使用内联弹性布局，使复选框和文本水平排列 */
+    align-items: center; /* 垂直居中对齐 */
+    margin: 5px 0; /* 上下间距 */
+    font-size: 16px;
+    color: var(--text-dark);
+}
+
+/* 复选框样式 */
+.dropdown-menu input[type="checkbox"] {
+    margin-right: 10px; /* 复选框与文本之间的间距 */
+}
